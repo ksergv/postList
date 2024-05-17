@@ -39,13 +39,19 @@
         </ul>
     </div>
     <script src="sidebar/index.js"></script>
-  
+    <script src="search.js"></script>
 </header>
   <!-- Home -->
   <section class="home" id="home">
     <div class="home-text container">
         <h2 class="home-title">The PostsList Blog</h2>
         <span class="subtitle">posts.json</span>
+        <form id="searchForm">
+          <label for="searchText">Search Text:</label>
+          <input type="text" id="searchText" name="searchText" required>
+          <button type="button" onclick="searchPosts()">Search</button>
+        </form>
+        
     </div>
 </section>
    <div class="posts">
