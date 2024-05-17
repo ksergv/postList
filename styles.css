@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  box-sizing: border-box;
+}
+body{
+  background-image: url('./img/background.jpg');
+   }
+   /* Variables */
+:root {
+    --container-color: #1a1e21;
+    --second-color: #fd8f44;
+    --text-color: #172317;
+    --bg-color: #fff;
+  }
+  ::selection {
+    color: var(--bg-color);
+    background: var(--second-color);
+  }
+  a {
+    text-decoration: none;
+  }
+  li {
+    list-style: none;
+  }
+ 
+  section {
+    padding: 3rem 0 2rem;
+  }
+.container {
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+  }
+  /* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+}
+header.shadow {
+  background: var(--bg-color);
+  box-shadow: 0 1px 4px hsl(0 4% 14% / 10%);
+  transition: 0.4s;
+}
+header.shadow .logo {
+  color: var(--text-color);
+}
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem !important;
+}
+.back-home {
+  color: var(--second-color);
+  font-size: 0.9rem;
+}
+.header-title {
+  width: 90%;
+  font-size: 2.6rem;
+  color: var(--bg-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.header-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+}
+/* Post Content */
+.post-header {
+  width: 100%;
+  height: 500px;
+  background: var(--container-color);
+}
+.post-container {
+  max-width: 800px;
+  margin: auto;
+  width: 100%;
+}
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem !important;
+}
+.back-home {
+  color: var(--second-color);
+  font-size: 0.9rem;
+}
+.header-title {
+  width: 90%;
+  font-size: 2.6rem;
+  color: var(--bg-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.header-img {
+  width: 100%;
+  height: 420px;
+  object-fit: contain;
+  object-position: center;
+}
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+.logo  {
+  font-family: 'Tangerine', serif;
+  font-size: 40px;
+  color: var(--bg-color);
+  text-shadow: 4px 4px 4px #aaa;
+  margin-right: 50px;
+}
+.login  {
+  font-family: 'Tangerine', serif;
+  font-size: 36px;
+  color: var(--second-color);
+  text-shadow: 4px 4px 4px #aaa;
+  border-radius:50%;
+  padding: 20px;
+}
+.logo span {
+  font-size: 36px;
+  color: var(--second-color);
+}
+
+.login:hover {
+  background: var(--text-color);
+  transition: 0.3s;
+}
+.subtitle {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  color:white;
+}
+.post-title {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  color: var(--text-color);
+}
+   /* Home */
+.home {
+    width: 100%;
+    min-height: 200px;
+    /*background-image: url('./img/apex_background_04.jpg'); */
+    background: url("https://images.unsplash.com/photo-1560762484-813fc97650a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-text {
+    color: var(--bg-color);
+    text-align: center;
+  }
+  .home-title{
+    font-family: "Pacifico", cursive;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 58px;
+      text-shadow: 4px 4px 4px #aaa;
+   }
+
+  .home-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  /* Post Filter */
+   .post-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5rem;
+    margin-top: 2rem !important;
+  }
+ 
+  .filter-item {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    color: gray;
+    border-radius:50%;
+    padding:20px;
+  }
+  .filter-item:hover { 
+   color: var(--second-color);
+   background: var(--bg-color);
+  }
+
+  .active-filter {
+    background: var(--second-color);
+    color: var(--bg-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  
+
+    #postList {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+  
+      .post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .post-grid li {
+    border: 1px solid #ccc;
+    background: var(--bg-color);
+    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+    padding: 15px;
+    border-radius: 20px;
+    position: relative;
+    padding-bottom: 50px; /* Задаем отступ снизу для размещения кнопки */
+    
+  }
+  
+  
+      #postList  li .content {
+        border: 1px solid #ddd;
+        padding: 5px;
+      }
+      #postList p {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        text-align: justify;
+      }
+      #postList img {
+        border: 1px solid #d7a3a3;
+        background: var(--text-color);
+        box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+        border-radius: 10px;
+        margin:10px;
+        padding:5px;
+      }
+      #postList button {
+        background: var(--container-color);
+        border: 1px solid silver;
+        color: var(--bg-color);
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        float: left;
+        border-radius: 10px;    
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+      }
+      #postList button:hover {
+        background-color: var(--second-color);
+      }
+
+      .posts{
+          display:block;
+        /*  background-image: url('./img/apex_background_13.jpg'); */
+        background-color: #fafafa;
+          border-radius: 20px;
+          opacity:0.7;
+          width:80%;
+          margin:10px 10%;
+          padding:20px;
+          border: 1px solid silver;
+          position:relative;
+          margin-top:150px;
+          padding-bottom:40px;
+      }
+      h1,h2{
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 36px;
+        text-shadow: 4px 4px 4px #aaa;
+        text-align: center;
+      }
+      .footer {
+        display: flex;
+        width:100%;
+        background-image: url('./img/apex_background_04.jpg');
+        color: var(--bg-color);
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 20px;
+      }
+      .footer p {
+        font-size: 0.938rem;
+      }
+      .social {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+      }
+      .social .bx {
+        font-size: 1.4rem;
+        color: var(--bg-color);
+      }
+      .social .bx:hover {
+        color: var(--second-color);
+        transition: 0.3s all linear;
+      }
+ /* Responsive */
+ @media (max-width: 1060px) {
+  .container {
+    margin: 0 auto;
+    width: 95%;
+  }
+  .home-text {
+    width: 100%;
+  }
+  .filter-item {
+    font-size: 22px;
+    padding:20px 10px;
+  }
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+      .login  {
+  font-size: 20px;
+  padding-right: 80px ;
+}
+ }
+@media (max-width: 812px) {
+  .nav {
+    padding: 14px 0;
+  }
+  .container {
+    margin: 0 auto;
+    width: 95%;
+  }
+  .filter-item {
+    font-size: 18px;
+    padding:20px 10px;
+  }
+  .header-img {
+  width: 100%;
+  height: 380px;
+  object-fit: contain;
+  object-position: center;
+  }
+  .posts{
+    width:95%;
+    margin:10px;
+    margin-top:40px;
+    padding:20px;
+  }
+  #postList p {
+    font-size: 16px;
+  }
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+    .login  {
+  font-size: 30px;
+  padding-right: 80px ;
+}
+}
+@media (max-width: 375px) {
+  .nav {
+    padding: 10px 0;
+  }
+  section {
+    padding: 2rem 0;
+  }
+    .container {
+    margin: 0 auto;
+    width: 95%;
+  }
+    .filter-item {
+    font-size: 14px;
+    padding:10px;
+  }
+  .header-content {
+    margin-top: 3rem !important;
+  }
+  .post-filter {
+    column-gap: 0.3rem;
+  }
+  .home {
+    min-height: 380px;
+  }
+  .header-title {
+    font-size: 2rem;  
+  }
+  .header-img {
+    width: 100%;
+  height: 380px;
+  object-fit: contain;
+  object-position: center;
+  }
+  .posts{
+    width:95%;
+    margin:10px;
+    margin-top:70px;
+    padding:20px;
+  }
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  #postList p {
+    font-size: 16px;
+  }
+  .login  {
+  font-size: 30px;
+  padding-right: 80px ;
+}
+
+}

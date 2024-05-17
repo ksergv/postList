@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Box Icons -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!--font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Pacifico&family=Rubik+Scribble&display=swap">
+  <title>один пост</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+     <!-- Header -->
+     <header>
+      <!-- Nav -->
+      <div class="nav container">
+      <!-- Logo -->
+      <a href="#" class="logo">PostList-<span>Blog</span></a>
+      <!-- Back To Home -->
+      <a href="index.html" class="login">Back To Home</a>
+  </div>
+
+  </header>
+  <!-- Post Content -->
+  <section class="post-header home">
+      <div class="header-content post-container">
+          <!-- Title -->
+          <h1 id="titulContainer" class="header-title"></h1>
+       <!-- Post Image -->
+       <div id ="imageContainer"></div> 
+      </div>
+  </section>
+
+ 
+  
+
+
+<div class="posts">
+  <ul id="postList"></ul>
+</div>
+  <!-- Footer -->
+  <div class="footer">
+    <p>&#169; All Right Reserved</p>
+    <div class="social">
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-twitter'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-linkedin' ></i></a>
+    </div>
+</div>
+<script>
+      // Получаем параметр из URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var indexParam = urlParams.get('id');
+      if (indexParam) {
+          var index = parseInt(indexParam);
+          // Загрузка поста при загрузке страницы
+          getPostById(index);
+      }
+    // Функция для отображения одного поста
+    function displayPost(post) {
+        const postList = document.getElementById('postList');
+        const listItem = document.createElement('li');
+         // Вставляем титул
+                    document.getElementById('titulContainer').innerHTML = '';
+                    var titulElement = document.createElement('h1');
+                    titulElement.innerHTML = `${post.title}`;
+                    document.getElementById('titulContainer').appendChild(titulElement);
+        // Вставляем изображение
+                  document.getElementById('imageContainer').innerHTML = '';
+                  const imageContainer = document.getElementById('imageContainer');
+                  imageContainer.innerHTML = `<img src="${post.image}" alt="" class="header-img">`;
+        // Вставляем содержание
+                  listItem.innerHTML = `<h2>${post.title}</h2> ${post.content}`; 
+         // Создаем кнопку
+         const button = document.createElement('button');
+              button.textContent = "Вернуться";
+              // При нажатии на кнопку вызываем функцию для перехода на one.html с передачей ID поста
+              button.addEventListener('click', () => {
+                  window.location.href = `index.html`;
+              }); 
+        listItem.appendChild(button);      
+        postList.appendChild(listItem);
+    }
+
+  // Функция для получения поста по ID
+  function getPostById(id) {
+    axios.get(`posts.json?id=${id}`)
+        .then(response => {
+          const posts = response.data.posts;
+            const post = posts.find(post => post.id === id); // Ищем пост с нужным id
+            if (post) {
+                displayPost(post);
+            } else {
+                console.error('Пост с указанным ID не найден');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+        });
+}
+
+  function getPost() {
+      // Получаем параметр из URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var indexParam = urlParams.get('index');
+      if (indexParam) {
+          var index = parseInt(indexParam);
+          // Загрузка поста при загрузке страницы
+          console.log('ID поста(getPost):', index); // Вывод отладочной информации
+          getPostById(index);
+      }
+  }
+
+</script>
+<script
+src="https://code.jquery.com/jquery-3.6.0.js"
+integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"></script>
+  <!-- Link To JS -->
+  <script src="main.js"></script>
+      
+</body>
+</html>

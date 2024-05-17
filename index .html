@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link To CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sidebar/styles.css">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!--font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Pacifico&family=Rubik+Scribble&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+  <title>Список постов на сервере json</title>  
+  
+</head>
+<body>
+   <!-- Header -->
+   <header>
+    <!-- Nav -->
+    <div class="nav container">
+    <!-- Logo -->
+    <a href="#" class="logo">PostList-<span>Blog</span></a>
+    <!-- Login Btn -->
+    <a href="about.html?id=15" class="login">About</a>
+    <!---sudebar-->
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+    <div class="sidebar">
+        <div class="sidebar-header">
+          <a href="#" class="logo" style="color:red;margin-left: 30px">Your Dao Here!</a>
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul class="menu">
+            <li><a href="tabs/index.html">Экстрасенсорика</a></li>
+            <li><a href="shop/index.html">Магазин</a></li>
+            <li><a href="video-trailer/index.html">Практики вхождения в пустоту</a></li>
+        </ul>
+    </div>
+    <script src="sidebar/index.js"></script>
+  
+</header>
+  <!-- Home -->
+  <section class="home" id="home">
+    <div class="home-text container">
+        <h2 class="home-title">The PostsList Blog</h2>
+        <span class="subtitle">posts.json</span>
+    </div>
+</section>
+   <div class="posts">
+     <!-- Post Filter -->
+     <div class="post-filter container">
+      <span class="filter-item active-filter" data-filter='all'>All</span>
+      <span class="filter-item" data-filter='magic'>Магия</span>
+      <span class="filter-item" data-filter='gigong'>Цигун</span>
+      <span class="filter-item" data-filter='info'>Информация</span>
+      <span class="filter-item" data-filter='health'>Здоровье</span>
+  </div>
+  
+    <ul id="postList" class="post-grid"></ul>
+    
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+    <p>&#169; All Right Reserved </p><center><span> Example of building a blog based on json data</span></center>
+    <div class="social">
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+        <a href="#"><i class='bx bxl-twitter'></i></a>
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-linkedin' ></i></a>
+    </div>
+</div>
+  <script>
+    // Функция для загрузки и отображения всех постов
+    function loadPosts() {
+      fetch('posts.json')
+        .then(response => response.json())
+        .then(data => {
+    // Если ваш объект содержит ключ "posts"
+    const posts = data.posts || [];
+          const postList = document.getElementById('postList');
+          postList.innerHTML = '';
+          posts.forEach(post => {
+            const listItem = document.createElement('li');
+             // Создаем class для  категории
+            listItem.classList.add(`${post.category}`);
+               // Ограничиваем содержимое до первых 20 символов
+           const shortenedContent = post.content.slice(0, 200);
+            // Создаем кнопку
+              const button = document.createElement('button');
+              button.textContent = "Перейти";
+              // При нажатии на кнопку вызываем функцию для перехода на one.html с передачей ID поста
+              button.addEventListener('click', () => {
+                  window.location.href = `one.html?id=${post.id}`;
+              }); 
+              // Добавляем кнопку и ограниченное содержимое к элементу списка
+              listItem.innerHTML = `<h2>${post.title}</h2> ${shortenedContent} ...`;
+              listItem.appendChild(button);
+              postList.appendChild(listItem);
+          });
+        })
+        .catch(error => console.error('Ошибка:', error));
+    }
+
+    // Загрузка постов при загрузке страницы
+    window.onload = loadPosts;
+  </script>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <!-- Link To JS -->
+    <script src="main.js"></script>
+</body>
+</html>
