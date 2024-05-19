@@ -47,10 +47,15 @@
         <h2 class="home-title">The PostsList Blog</h2>
         <span class="subtitle">posts.json</span>
         <form id="searchForm">
-          <label for="searchText">Search Text:</label>
+          <label for="searchText">Поиск текста:</label>
           <input type="text" id="searchText" name="searchText" required>
-          <button type="button" onclick="searchPosts()">Search</button>
-        </form>
+          <button type="button" onclick="searchPosts()">Искать</button>
+        </form><br/>
+        <label for="searchText">Сортировка:</label>
+        <select id="sortOrder" name="sortOrder" onchange="loadPosts()">
+          <option value="asc">Сначала старые</option>
+          <option value="desc">Сначала новые</option>
+        </select>
         
     </div>
 </section>
@@ -78,8 +83,14 @@
     </div>
 </div>
   <script>
+     // Function to get the selected sort order
+function getSelectedSortOrder() {
+  const sortOrderSelect = document.getElementById('sortOrder');
+  return sortOrderSelect.value;
+}
     // Функция для загрузки и отображения всех постов
     function loadPosts() {
+      const sortOrder = getSelectedSortOrder();
       fetch('posts.json')
         .then(response => response.json())
         .then(data => {
@@ -87,6 +98,8 @@
     const posts = data.posts || [];
           const postList = document.getElementById('postList');
           postList.innerHTML = '';
+          // Sort posts by id based on the selected sort order
+          posts.sort((a, b) => sortOrder === 'asc' ? a.id - b.id : b.id - a.id);
           posts.forEach(post => {
             const listItem = document.createElement('li');
              // Создаем class для  категории
