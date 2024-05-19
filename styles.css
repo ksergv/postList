@@ -234,12 +234,18 @@ header.shadow .logo {
     
   }
   
-  
-      #postList  li .content {
+      #postList  li  {
         border: 1px solid #ddd;
         padding: 5px;
+        font-size: 20px;
+      }
+      #postList .content {
+        border: 1px solid #ddd;
+        padding: 5px;
+        font-size: 20px;
       }
       #postList p {
+        font-family: "Poppins", sans-serif;
         font-weight: 400;
         font-style: normal;
         font-size: 20px;
@@ -254,7 +260,7 @@ header.shadow .logo {
         padding:5px;
       }
       #postList button {
-        background: var(--container-color);
+        background: var(green);
         border: 1px solid silver;
         color: var(--bg-color);
         padding: 10px;
@@ -265,10 +271,28 @@ header.shadow .logo {
         float: left;
         border-radius: 10px;    
         position: absolute;
-        bottom: -10px;
+        bottom: -15px;
         right: -10px;
       }
       #postList button:hover {
+        background-color: var(--second-color);
+      }
+      .deletebutton{
+          background: red;
+          border: 1px solid silver;
+          color: var(--bg-color);
+          padding: 10px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 16px;
+          cursor: pointer;
+          float: right;
+          margin-top:10px;
+          margin-right:120px;
+          border-radius: 10px;    
+        
+      }
+      .deletebutton:hover {
         background-color: var(--second-color);
       }
 
@@ -277,7 +301,7 @@ header.shadow .logo {
         /*  background-image: url('./img/apex_background_13.jpg'); */
         background-color: #fafafa;
           border-radius: 20px;
-          opacity:0.7;
+          opacity:0.8;
           width:80%;
           margin:10px 10%;
           padding:20px;
