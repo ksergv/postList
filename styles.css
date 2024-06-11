@@ -260,9 +260,9 @@ header.shadow .logo {
         padding:5px;
       }
       #postList button {
-        background: var(green);
-        border: 1px solid silver;
-        color: var(--bg-color);
+        background-color: var(bg-color);
+        border: 1px solid  transparent;
+        color: #fafafa;
         padding: 10px;
         text-align: center;
         text-decoration: none;
@@ -275,7 +275,9 @@ header.shadow .logo {
         right: -10px;
       }
       #postList button:hover {
-        background-color: var(--second-color);
+        background-color: #fafafa;
+        color: var(--second-color);
+        border: 1px solid  var(--second-color);
       }
       .deletebutton{
           background: red;
