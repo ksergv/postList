@@ -273,6 +273,7 @@ header.shadow .logo {
         position: absolute;
         bottom: -15px;
         right: -10px;
+        transition: all .5s;
       }
       #postList button:hover {
         background-color: #fafafa;
