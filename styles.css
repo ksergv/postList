@@ -225,17 +225,18 @@ header.shadow .logo {
   
   .post-grid li {
     background: var(--bg-color);
-    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
-    padding: 15px;
-    border-radius: 20px;
+    border-radius: 0px;
     position: relative;
-    padding-bottom: 50px; /* Задаем отступ снизу для размещения кнопки */
-    
+    padding-bottom: 50px; /* Задаем отступ снизу для размещения кнопки */   
+  }
+
+  .post-grid li:hover {
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   
       #postList  li  {
-        border: 1px solid  var(--second-color);
-        box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+        border: 1px solid  var(--second-color);       
         padding: 5px;
         font-size: 20px;
       }
