@@ -224,7 +224,6 @@ header.shadow .logo {
   }
   
   .post-grid li {
-    border: 1px solid #ccc;
     background: var(--bg-color);
     box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
     padding: 15px;
@@ -235,7 +234,8 @@ header.shadow .logo {
   }
   
       #postList  li  {
-        border: 1px solid #ddd;
+        border: 1px solid  var(--second-color);
+        box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
         padding: 5px;
         font-size: 20px;
       }
