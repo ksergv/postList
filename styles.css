@@ -228,6 +228,7 @@ header.shadow .logo {
     border-radius: 0px;
     position: relative;
     padding-bottom: 50px; /* Задаем отступ снизу для размещения кнопки */   
+    transition: all .5s;
   }
 
   .post-grid li:hover {
