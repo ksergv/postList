@@ -11,3 +11,4 @@
 Примечание: 
 1.Почта  в магазине настроена через emailjs и  теперь работает! Проверено! 
 2.Добавлен slider
+3. Посмотреть - https://ksergv.github.io/postList/index.html
