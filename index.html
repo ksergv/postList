@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Link To CSS -->
+      <!--Slick-->
+      <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+      <!-- Add the new slick-theme.css if you want the default styling -->
+      <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+        <!-- мои стили -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="sidebar/styles.css">
     <!-- Box Icons -->
@@ -46,6 +51,30 @@
     <div class="home-text container">
         <h2 class="home-title">The PostsList Blog</h2>
         <span class="subtitle">posts.json</span>
+        <!-- slider -->
+        <section class="slider">
+          <div class="slider__container">
+            <div class="slider__inner">
+              <div class="slider__item">
+                <div class="slider__item-title"> Полный покой</div>
+              </div>
+              <div class="slider__item">
+                <div class="slider__item-title">Инь и Ян</div>
+              </div>
+              <div class="slider__item">
+                <div class="slider__item-title">Солнце встает</div>
+              </div>
+              <div class="slider__item">
+                <div class="slider__item-title">Мыльный пузырь</div>
+              </div>
+              <div class="slider__item">
+                <div class="slider__item-title">Море и пляж</div>
+              </div>
+              
+            </div>
+          </div>
+        </section>
+        <!-- end slider -->
         <form id="searchForm">
           <label for="searchText">Поиск текста:</label>
           <input type="text" id="searchText" name="searchText" required>
@@ -130,6 +159,10 @@ function getSelectedSortOrder() {
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
   crossorigin="anonymous"></script>
     <!-- Link To JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Link To slick JS -->
+    <script src="js/slick.min.js"></script>
+    <script src="js/slider.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
