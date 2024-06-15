@@ -484,7 +484,7 @@ header.shadow .logo {
     font-size: 16px;
   }
   .card-content li {
-    min-width:90%;
+    min-width:45%;
   }
     .login  {
   font-size: 30px;
@@ -530,10 +530,8 @@ header.shadow .logo {
     margin-top:70px;
     padding:20px;
   }
-  .post-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
+  .card-content li {
+    min-width:90%;
   }
   #postList p {
     font-size: 16px;
