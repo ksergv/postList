@@ -351,7 +351,7 @@ header.shadow .logo {
       #postList button {
         background-color: var(bg-color);
         border: 1px solid  transparent;
-        color: #fafafa;
+        color: #040404;
         padding: 10px;
         text-align: center;
         text-decoration: none;
@@ -448,10 +448,8 @@ header.shadow .logo {
     font-size: 22px;
     padding:20px 10px;
   }
-  .post-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  .card-content li {
+    min-width:45%;
   }
       .login  {
   font-size: 20px;
@@ -485,10 +483,8 @@ header.shadow .logo {
   #postList p {
     font-size: 16px;
   }
-  .post-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  .card-content li {
+    min-width:90%;
   }
     .login  {
   font-size: 30px;
