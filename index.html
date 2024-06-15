@@ -11,12 +11,15 @@
         <!-- мои стили -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="sidebar/styles.css">
+    <!-- pagination style-->
+    <link rel="stylesheet" href="style.css">
     <!-- Box Icons -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <!--font-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Pacifico&family=Rubik+Scribble&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
   <title>Список постов на сервере json</title>  
   
 </head>
@@ -97,10 +100,21 @@
       <span class="filter-item" data-filter='info'>Информация</span>
       <span class="filter-item" data-filter='health'>Здоровье</span>
   </div>
-  
-    <ul id="postList" class="post-grid"></ul>
+
+
+   
+      
+    <ul id="postList" class="card-content" style="display: none">
     
+    </ul>
+  
+   
+    <div class="pagination">
+      <!-- <li class="page-item previous-page"><a class="page-link" href="javascript:void(0)">Prev</a></li>
+      <li class="page-item next-page"><a class="page-link" href="javascript:void(0)">Next</a></li> -->
+    </div>
   </div>
+  
   <!-- Footer -->
   <div class="footer">
     <p>&#169; All Right Reserved </p><center><span> Example of building a blog based on json data</span></center>
@@ -111,55 +125,11 @@
         <a href="#"><i class='bx bxl-linkedin' ></i></a>
     </div>
 </div>
-  <script>
-     // Function to get the selected sort order
-function getSelectedSortOrder() {
-  const sortOrderSelect = document.getElementById('sortOrder');
-  return sortOrderSelect.value;
-}
-    // Функция для загрузки и отображения всех постов
-    function loadPosts() {
-      const sortOrder = getSelectedSortOrder();
-      fetch('posts.json')
-        .then(response => response.json())
-        .then(data => {
-    // Если ваш объект содержит ключ "posts"
-    const posts = data.posts || [];
-          const postList = document.getElementById('postList');
-          postList.innerHTML = '';
-          // Sort posts by id based on the selected sort order
-          posts.sort((a, b) => sortOrder === 'asc' ? a.id - b.id : b.id - a.id);
-          posts.forEach(post => {
-            const listItem = document.createElement('li');
-             // Создаем class для  категории
-            listItem.classList.add(`${post.category}`);
-               // Ограничиваем содержимое до первых 20 символов
-           const shortenedContent = post.content.slice(0, 200);
-            // Создаем кнопку
-              const button = document.createElement('button');
-              button.textContent = "Перейти";
-              // При нажатии на кнопку вызываем функцию для перехода на one.html с передачей ID поста
-              button.addEventListener('click', () => {
-                  window.location.href = `one.html?id=${post.id}`;
-              }); 
-              // Добавляем кнопку и ограниченное содержимое к элементу списка
-              listItem.innerHTML = `<h2>${post.title}</h2> ${shortenedContent} ...`;
-              listItem.appendChild(button);
-              postList.appendChild(listItem);
-          });
-        })
-        .catch(error => console.error('Ошибка:', error));
-    }
-
-    // Загрузка постов при загрузке страницы
-    window.onload = loadPosts;
-  </script>
-    <script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-    <!-- Link To JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <!-- Link To JS -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"  charset="utf-8"></script>
+<script type="text/javascript"src="js/load.js"></script> 
+  <script type="text/javascript"src="js/pagination.js"></script> 
+ <!-- <script type="text/javascript"src="js/test.js"></script>  -->
     <!-- Link To slick JS -->
     <script src="js/slick.min.js"></script>
     <script src="js/slider.js"></script>

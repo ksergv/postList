@@ -295,21 +295,30 @@ header.shadow .logo {
         margin: 0;
       }
   
-      .post-grid {
+      /* .post-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+  } */
+  .card-content {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+   flex-wrap: wrap;
+   gap: 20px;
   }
-  
-  .post-grid li {
+  .card-content li {
     background: var(--bg-color);
+    box-sizing: border-box;
+    min-width:30%;
     border-radius: 0px;
     position: relative;
     padding-bottom: 50px; /* Задаем отступ снизу для размещения кнопки */   
     transition: all .5s;
+    flex: 1;
   }
 
-  .post-grid li:hover {
+  .card-content li:hover {
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
