@@ -398,7 +398,7 @@ header.shadow .logo {
   font-weight: bold; /* Выделение первой буквы жирным */
   color: #333; /* Цвет первой буквы */
 }
-      h1,h2{
+      h1{
         font-family: "Pacifico", cursive;
         font-weight: 400;
         font-style: normal;
@@ -406,6 +406,16 @@ header.shadow .logo {
         text-shadow: 4px 4px 4px #aaa;
         text-align: center;
       }
+      h2{
+        font-family: "Pacifico", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 28px;
+        color: #333;
+        text-shadow: 4px 4px 4px #aaa;
+        text-align: center;
+      }
+
       .footer {
         display: flex;
         width:100%;
