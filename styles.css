@@ -332,6 +332,19 @@ header.shadow .logo {
         padding: 5px;
         font-size: 20px;
       }
+      #postList > li ul,
+      #postList > li ol {
+        margin: 10px 0 10px 28px;
+        padding-left: 18px;
+      }
+      #postList > li ul li,
+      #postList > li ol li {
+        border: 0;
+        font-size: inherit;
+        list-style: disc;
+        margin: 4px 0;
+        padding: 0;
+      }
       #postList .content {
         border: 1px solid #ddd;
         padding: 5px;

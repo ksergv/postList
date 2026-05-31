@@ -320,6 +320,20 @@
   line-height: 1.55;
 }
 
+#postPreview ul,
+#postPreview ol {
+  margin: 10px 0 10px 28px;
+  padding-left: 18px;
+}
+
+#postPreview ul li,
+#postPreview ol li {
+  border: 0;
+  list-style: disc;
+  margin: 4px 0;
+  padding: 0;
+}
+
 #postPreview img {
   height: auto;
   max-width: 100%;
