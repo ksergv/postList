@@ -267,7 +267,7 @@
 .format-toolbar {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 4px;
 }
 
 #postForm .format-toolbar button {
@@ -277,11 +277,11 @@
   border-radius: 8px;
   color: #344054;
   display: inline-flex;
-  font-size: 13px;
+  font-size: 12px;
   justify-content: center;
   min-height: 34px;
   min-width: 42px;
-  padding: 7px 10px;
+  padding: 7px 7px;
 }
 
 #postForm .format-toolbar button:hover {
