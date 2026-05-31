@@ -19,6 +19,7 @@
           title: post.title || "",
           image: post.image || "",
           content: post.content || "",
+          hidden: Boolean(post.hidden),
         }))
         .filter((post) => Number.isFinite(post.id)),
     };

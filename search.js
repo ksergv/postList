@@ -30,8 +30,10 @@
       postList.innerHTML = '';
   
       const filteredPosts = posts.filter(post => 
-        post.title.toLowerCase().includes(searchText) || 
-        post.content.toLowerCase().includes(searchText)
+        !post.hidden && (
+          post.title.toLowerCase().includes(searchText) || 
+          post.content.toLowerCase().includes(searchText)
+        )
       );
   
       if (filteredPosts.length > 0) {

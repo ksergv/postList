@@ -92,9 +92,11 @@
         .then(data => {
           const posts = data.posts;
             const post = posts.find(post => post.id === id); // Ищем пост с нужным id
-            if (post) {
+            if (post && !post.hidden) {
                 displayPost(post);
             } else {
+                document.getElementById('titulContainer').innerHTML = 'Публикация недоступна';
+                document.getElementById('postList').innerHTML = '<li><h2>Публикация недоступна</h2><p>Эта публикация скрыта или не найдена.</p></li>';
                 console.error('Пост с указанным ID не найден');
             }
         })

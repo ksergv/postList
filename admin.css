@@ -171,6 +171,18 @@
   gap: 7px;
 }
 
+#postForm .checkbox-row {
+  align-items: center;
+  flex-direction: row;
+  font-weight: 600;
+  gap: 10px;
+}
+
+#postForm .checkbox-row input {
+  height: 18px;
+  width: 18px;
+}
+
 #postForm input,
 #postForm select,
 #postForm textarea {

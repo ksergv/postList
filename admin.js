@@ -9,6 +9,7 @@ const elements = {
   duplicateButton: document.getElementById("duplicatePostButton"),
   form: document.getElementById("postForm"),
   formatToolbar: document.querySelector(".format-toolbar"),
+  hidden: document.getElementById("postHidden"),
   id: document.getElementById("postId"),
   image: document.getElementById("postImage"),
   importButton: document.getElementById("importFileButton"),
@@ -53,7 +54,8 @@ function renderList() {
     .forEach((post) => {
       const item = document.createElement("li");
       item.className = `admin-post-item${post.id === state.selectedId ? " active" : ""}`;
-      item.innerHTML = `<strong>${post.id}. ${post.title || "Без заголовка"}</strong><span>${post.category} · ${post.image || "без картинки"}</span>`;
+      const hiddenLabel = post.hidden ? " · скрыт" : "";
+      item.innerHTML = `<strong>${post.id}. ${post.title || "Без заголовка"}</strong><span>${post.category}${hiddenLabel} · ${post.image || "без картинки"}</span>`;
       item.addEventListener("click", () => selectPost(post.id));
       elements.list.appendChild(item);
     });
@@ -74,6 +76,7 @@ function fillForm(post) {
   elements.category.value = post ? post.category : "info";
   elements.title.value = post ? post.title : "";
   elements.image.value = post ? post.image : "";
+  elements.hidden.checked = post ? Boolean(post.hidden) : false;
   elements.content.value = post ? post.content : "";
   renderPreview(post);
 }
@@ -90,6 +93,7 @@ function readFormPost() {
     category: elements.category.value,
     title: elements.title.value.trim(),
     image: elements.image.value.trim(),
+    hidden: elements.hidden.checked,
     content: elements.content.value,
   };
 }
@@ -154,6 +158,7 @@ function addPost() {
     category: "info",
     title: "Новый пост",
     image: "img/background.jpg",
+    hidden: false,
     content: "<p>Новый текст поста.</p>",
   };
   state.posts.push(post);

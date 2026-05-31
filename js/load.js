@@ -12,8 +12,10 @@ function loadPosts() {
       const posts = data.posts || [];
       const postList = document.getElementById('postList');
       postList.innerHTML = '';
-      posts.sort((a, b) => sortOrder === 'asc' ? a.id - b.id : b.id - a.id);
-      posts.forEach(post => {
+      posts
+        .filter(post => !post.hidden)
+        .sort((a, b) => sortOrder === 'asc' ? a.id - b.id : b.id - a.id)
+        .forEach(post => {
         const listItem = document.createElement('li');
         listItem.classList.add(`${post.category}`);
         listItem.classList.add('card');
@@ -26,7 +28,7 @@ function loadPosts() {
         listItem.innerHTML = `<h2>${post.title}</h2> ${shortenedContent} ...`;
         listItem.appendChild(button);
         postList.appendChild(listItem);
-      });
+        });
 
       // Trigger contentLoaded event after loading posts
       $(document).trigger("contentLoaded");
