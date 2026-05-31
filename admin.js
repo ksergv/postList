@@ -3,7 +3,12 @@ const state = {
   selectedId: null,
 };
 
+const ADMIN_PASSWORD = "admin123";
+const AUTH_KEY = "postList.adminAuth";
+
 const elements = {
+  adminPassword: document.getElementById("adminPassword"),
+  adminShell: document.getElementById("adminShell"),
   content: document.getElementById("postContent"),
   deleteButton: document.getElementById("deletePostButton"),
   duplicateButton: document.getElementById("duplicatePostButton"),
@@ -15,6 +20,9 @@ const elements = {
   importButton: document.getElementById("importFileButton"),
   importInput: document.getElementById("importFileInput"),
   list: document.getElementById("adminPostList"),
+  loginForm: document.getElementById("loginForm"),
+  loginMessage: document.getElementById("loginMessage"),
+  loginPanel: document.getElementById("loginPanel"),
   newButton: document.getElementById("addPostButton"),
   preview: document.getElementById("postPreview"),
   resetButton: document.getElementById("resetDraftButton"),
@@ -24,6 +32,17 @@ const elements = {
   category: document.getElementById("postCategory"),
   title: document.getElementById("postTitle"),
 };
+
+function unlockAdmin() {
+  document.body.classList.remove("admin-locked");
+  document.body.classList.add("admin-unlocked");
+  sessionStorage.setItem(AUTH_KEY, "1");
+  loadInitialPosts();
+}
+
+function isAdminUnlocked() {
+  return sessionStorage.getItem(AUTH_KEY) === "1";
+}
 
 function getNextId() {
   return state.posts.reduce((maxId, post) => Math.max(maxId, Number(post.id) || 0), 0) + 1;
@@ -297,4 +316,20 @@ elements.saveButton.addEventListener("click", () => {
   });
 });
 
-loadInitialPosts();
+elements.loginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (elements.adminPassword.value === ADMIN_PASSWORD) {
+    elements.adminPassword.value = "";
+    elements.loginMessage.textContent = "";
+    unlockAdmin();
+    return;
+  }
+
+  elements.loginMessage.textContent = "Неверный пароль";
+  elements.adminPassword.select();
+});
+
+if (isAdminUnlocked()) {
+  unlockAdmin();
+}

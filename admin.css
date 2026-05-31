@@ -40,6 +40,77 @@
   margin: 32px auto;
 }
 
+.admin-locked .admin-shell,
+.admin-locked #saveFileButton {
+  display: none;
+}
+
+.login-panel {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 90px);
+  padding: 32px 16px;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #d6dce3;
+  border-radius: 8px;
+  box-shadow: 0 18px 45px rgba(31, 41, 51, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+  padding: 24px;
+  width: 100%;
+}
+
+.login-box h1 {
+  color: #1f2933;
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  text-align: left;
+  text-shadow: none;
+}
+
+.login-box label {
+  color: #344054;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 7px;
+}
+
+.login-box input {
+  border: 1px solid #c8d0d9;
+  border-radius: 8px;
+  font: 15px/1.45 "Poppins", sans-serif;
+  padding: 11px 12px;
+  width: 100%;
+}
+
+.login-box button {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: #fd8f44;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 11px 14px;
+}
+
+.login-box p {
+  color: #d64545;
+  min-height: 20px;
+}
+
+.admin-unlocked .login-panel {
+  display: none;
+}
+
 .admin-toolbar {
   align-items: center;
   display: flex;

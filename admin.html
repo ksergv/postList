@@ -8,7 +8,7 @@
   <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
   <title>Админка PostList</title>
 </head>
-<body class="admin-page">
+<body class="admin-page admin-locked">
   <header class="admin-header">
     <div class="nav container">
       <a href="index.html" class="logo">PostList-<span>Blog</span></a>
@@ -19,7 +19,19 @@
     </div>
   </header>
 
-  <main class="admin-shell">
+  <section class="login-panel" id="loginPanel" aria-label="Вход в админку">
+    <form id="loginForm" class="login-box">
+      <h1>Вход в админку</h1>
+      <label>
+        Пароль
+        <input id="adminPassword" type="password" autocomplete="current-password" required>
+      </label>
+      <button type="submit">Войти</button>
+      <p id="loginMessage"></p>
+    </form>
+  </section>
+
+  <main class="admin-shell" id="adminShell">
     <section class="admin-toolbar" aria-label="Управление постами">
       <div>
         <h1>Админка постов</h1>
