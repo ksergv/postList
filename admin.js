@@ -153,6 +153,22 @@ function insertIntoContent(before, after = "", placeholder = "") {
   updateSelectedPost();
 }
 
+function insertUnorderedList() {
+  const textarea = elements.content;
+  const start = textarea.selectionStart;
+  const end = textarea.selectionEnd;
+  const selectedText = textarea.value.slice(start, end).trim();
+  const items = selectedText
+    ? selectedText.split(/\r?\n/).map((line) => line.trim()).filter(Boolean)
+    : ["Пункт списка", "Пункт списка"];
+  const insertText = `<ul>\n${items.map((item) => `  <li>${item}</li>`).join("\n")}\n</ul>`;
+
+  textarea.value = `${textarea.value.slice(0, start)}${insertText}${textarea.value.slice(end)}`;
+  textarea.focus();
+  textarea.setSelectionRange(start, start + insertText.length);
+  updateSelectedPost();
+}
+
 function applyFormat(format) {
   const imagePath = elements.image.value.trim() || "img/example.jpg";
 
@@ -161,6 +177,7 @@ function applyFormat(format) {
     bold: () => insertIntoContent("<b>", "</b>", "жирный текст"),
     heading2: () => insertIntoContent("<h2>", "</h2>", "Заголовок"),
     heading3: () => insertIntoContent("<h3>", "</h3>", "Подзаголовок"),
+    unorderedList: insertUnorderedList,
     image: () => insertIntoContent(`<img src="${imagePath}" alt="">`, "", ""),
     link: () => insertIntoContent('<a href="#">', "</a>", "текст ссылки"),
     linebreak: () => insertIntoContent("<br>\n", "", ""),
