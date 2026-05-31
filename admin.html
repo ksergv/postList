@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+  <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+  <title>Админка PostList</title>
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <div class="nav container">
+      <a href="index.html" class="logo">PostList-<span>Blog</span></a>
+      <nav class="admin-nav">
+        <a href="index.html">На сайт</a>
+        <button id="saveFileButton" type="button">Сохранить posts.json</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="admin-shell">
+    <section class="admin-toolbar" aria-label="Управление постами">
+      <div>
+        <h1>Админка постов</h1>
+        <p id="statusText">Загрузка posts.json...</p>
+      </div>
+      <div class="admin-actions">
+        <button id="importFileButton" type="button" class="ghost">Импорт posts.json</button>
+        <input id="importFileInput" class="admin-file-input" type="file" accept="application/json,.json">
+        <button id="addPostButton" type="button">Новый пост</button>
+        <button id="duplicatePostButton" type="button">Дублировать</button>
+        <button id="deletePostButton" type="button" class="danger">Удалить</button>
+        <button id="resetDraftButton" type="button" class="ghost">Сбросить черновик</button>
+      </div>
+    </section>
+
+    <section class="admin-layout">
+      <aside class="post-browser" aria-label="Список постов">
+        <input id="postSearch" type="search" placeholder="Поиск по заголовку или тексту">
+        <ul id="adminPostList"></ul>
+      </aside>
+
+      <section class="editor-panel" aria-label="Редактор поста">
+        <form id="postForm">
+          <div class="form-grid">
+            <label>
+              ID
+              <input id="postId" type="number" min="1" required>
+            </label>
+            <label>
+              Категория
+              <select id="postCategory">
+                <option value="magic">Магия</option>
+                <option value="gigong">Цигун</option>
+                <option value="info">Информация</option>
+                <option value="health">Здоровье</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Заголовок
+            <input id="postTitle" type="text" required>
+          </label>
+
+          <label>
+            Картинка
+            <input id="postImage" type="text" placeholder="img/example.jpg">
+          </label>
+
+          <label>
+            HTML содержимое
+            <textarea id="postContent" rows="18" spellcheck="false"></textarea>
+          </label>
+        </form>
+
+        <section class="preview-panel" aria-label="Предпросмотр">
+          <h2>Предпросмотр</h2>
+          <article id="postPreview"></article>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script src="js/posts-store.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -23,8 +23,7 @@
   // Function to search for posts by text in title and content
   function searchPosts() {
     const searchText = document.getElementById('searchText').value.toLowerCase();
-    fetch('posts.json')
-      .then(response => response.json())
+    PostStore.getPostsData()
       .then(data => data.posts) 
       .then(posts => {
       const postList = document.getElementById('postList');

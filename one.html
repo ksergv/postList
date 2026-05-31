@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Pacifico&family=Rubik+Scribble&display=swap">
   <title>один пост</title>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/posts-store.js"></script>
 </head>
 <body>
      <!-- Header -->
@@ -87,9 +88,9 @@
 
   // Функция для получения поста по ID
   function getPostById(id) {
-    axios.get(`posts.json?id=${id}`)
-        .then(response => {
-          const posts = response.data.posts;
+    PostStore.getPostsData()
+        .then(data => {
+          const posts = data.posts;
             const post = posts.find(post => post.id === id); // Ищем пост с нужным id
             if (post) {
                 displayPost(post);

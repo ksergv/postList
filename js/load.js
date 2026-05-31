@@ -7,8 +7,7 @@ function getSelectedSortOrder() {
 // Function to load and display all posts
 function loadPosts() {
   const sortOrder = getSelectedSortOrder();
-  fetch('posts.json')
-    .then(response => response.json())
+  PostStore.getPostsData()
     .then(data => {
       const posts = data.posts || [];
       const postList = document.getElementById('postList');
