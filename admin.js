@@ -8,6 +8,7 @@ const elements = {
   deleteButton: document.getElementById("deletePostButton"),
   duplicateButton: document.getElementById("duplicatePostButton"),
   form: document.getElementById("postForm"),
+  formatToolbar: document.querySelector(".format-toolbar"),
   id: document.getElementById("postId"),
   image: document.getElementById("postImage"),
   importButton: document.getElementById("importFileButton"),
@@ -113,6 +114,38 @@ function updateSelectedPost() {
   saveDraft();
   renderList();
   renderPreview(post);
+}
+
+function insertIntoContent(before, after = "", placeholder = "") {
+  const textarea = elements.content;
+  const start = textarea.selectionStart;
+  const end = textarea.selectionEnd;
+  const selectedText = textarea.value.slice(start, end);
+  const text = selectedText || placeholder;
+  const insertText = `${before}${text}${after}`;
+
+  textarea.value = `${textarea.value.slice(0, start)}${insertText}${textarea.value.slice(end)}`;
+  textarea.focus();
+  textarea.setSelectionRange(start + before.length, start + before.length + text.length);
+  updateSelectedPost();
+}
+
+function applyFormat(format) {
+  const imagePath = elements.image.value.trim() || "img/example.jpg";
+
+  const formats = {
+    paragraph: () => insertIntoContent("<p>", "</p>", "Текст абзаца"),
+    bold: () => insertIntoContent("<b>", "</b>", "жирный текст"),
+    heading2: () => insertIntoContent("<h2>", "</h2>", "Заголовок"),
+    heading3: () => insertIntoContent("<h3>", "</h3>", "Подзаголовок"),
+    image: () => insertIntoContent(`<img src="${imagePath}" alt="">`, "", ""),
+    link: () => insertIntoContent('<a href="#">', "</a>", "текст ссылки"),
+    linebreak: () => insertIntoContent("<br>\n", "", ""),
+  };
+
+  if (formats[format]) {
+    formats[format]();
+  }
 }
 
 function addPost() {
@@ -244,6 +277,12 @@ elements.search.addEventListener("input", renderList);
 elements.newButton.addEventListener("click", addPost);
 elements.duplicateButton.addEventListener("click", duplicatePost);
 elements.deleteButton.addEventListener("click", deletePost);
+elements.formatToolbar.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-format]");
+  if (button) {
+    applyFormat(button.dataset.format);
+  }
+});
 elements.importButton.addEventListener("click", () => elements.importInput.click());
 elements.importInput.addEventListener("change", () => importPostsFile(elements.importInput.files[0]));
 elements.resetButton.addEventListener("click", resetDraft);

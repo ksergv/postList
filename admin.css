@@ -181,6 +181,31 @@
   width: 100%;
 }
 
+.format-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#postForm .format-toolbar button {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #c8d0d9;
+  border-radius: 8px;
+  color: #344054;
+  display: inline-flex;
+  font-size: 13px;
+  justify-content: center;
+  min-height: 34px;
+  min-width: 42px;
+  padding: 7px 10px;
+}
+
+#postForm .format-toolbar button:hover {
+  border-color: #fd8f44;
+  color: #fd8f44;
+}
+
 #postForm textarea {
   min-height: 420px;
   resize: vertical;
