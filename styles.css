@@ -294,6 +294,19 @@ header.shadow .logo {
         padding: 0;
         margin: 0;
       }
+      #postList > li {
+  border: 1px solid var(--second-color);
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 20px;
+  list-style: none; /* only top-level items */
+}
+
+#postList li ul li {
+  list-style: disc; /* restore bullets for nested lists */
+  margin-left: 20px;
+}
+
   
       .post-grid {
     display: grid;
