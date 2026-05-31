@@ -161,7 +161,7 @@ function insertUnorderedList() {
   const items = selectedText
     ? selectedText.split(/\r?\n/).map((line) => line.trim()).filter(Boolean)
     : ["Пункт списка", "Пункт списка"];
-  const insertText = `<ul>\n${items.map((item) => `  <li>${item}</li>`).join("\n")}\n</ul>`;
+  const insertText = `<ul  list-style-type: "— "; >\n${items.map((item) => `  <li>${item}</li>`).join("\n")}\n</ul>`;
 
   textarea.value = `${textarea.value.slice(0, start)}${insertText}${textarea.value.slice(end)}`;
   textarea.focus();
