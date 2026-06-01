@@ -5,6 +5,8 @@ const state = {
 
 const ADMIN_PASSWORD = "admin123";
 const AUTH_KEY = "postList.adminAuth";
+const SAVE_API_URL_KEY = "postList.saveApiUrl";
+const SAVE_API_SECRET_KEY = "postList.saveApiSecret";
 
 const elements = {
   adminPassword: document.getElementById("adminPassword"),
@@ -27,6 +29,8 @@ const elements = {
   previewButton: document.getElementById("previewPostButton"),
   preview: document.getElementById("postPreview"),
   resetButton: document.getElementById("resetDraftButton"),
+  saveApiSecret: document.getElementById("saveApiSecret"),
+  saveApiUrl: document.getElementById("saveApiUrl"),
   saveButton: document.getElementById("saveFileButton"),
   search: document.getElementById("postSearch"),
   status: document.getElementById("statusText"),
@@ -253,6 +257,12 @@ function deletePost() {
 
 async function savePostsFile() {
   const json = `${JSON.stringify({ posts: state.posts }, null, 2)}\n`;
+  const apiUrl = elements.saveApiUrl.value.trim();
+
+  if (apiUrl) {
+    await savePostsToApi(apiUrl);
+    return;
+  }
 
   if ("showSaveFilePicker" in window) {
     const handle = await window.showSaveFilePicker({
@@ -273,6 +283,44 @@ async function savePostsFile() {
   link.click();
   URL.revokeObjectURL(link.href);
   elements.status.textContent = "Файл posts.json скачан. Замените им старый файл в папке проекта.";
+}
+
+async function savePostsToApi(apiUrl) {
+  const apiSecret = elements.saveApiSecret.value.trim();
+
+  if (!apiSecret) {
+    elements.status.textContent = "Введите API secret для сохранения через сервер.";
+    elements.saveApiSecret.focus();
+    return;
+  }
+
+  elements.saveButton.disabled = true;
+  elements.status.textContent = "Сохраняем posts.json в GitHub...";
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Admin-Secret": apiSecret,
+      },
+      body: JSON.stringify({ posts: state.posts }),
+    });
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok || !result.ok) {
+      throw new Error(result.error || `HTTP ${response.status}`);
+    }
+
+    localStorage.setItem(SAVE_API_URL_KEY, apiUrl);
+    sessionStorage.setItem(SAVE_API_SECRET_KEY, apiSecret);
+    PostStore.clearDraftData();
+    elements.status.textContent = result.commit
+      ? `posts.json сохранен в GitHub. Commit: ${result.commit}`
+      : "posts.json сохранен в GitHub.";
+  } finally {
+    elements.saveButton.disabled = false;
+  }
 }
 
 async function resetDraft() {
@@ -341,6 +389,14 @@ elements.formatToolbar.addEventListener("click", (event) => {
 elements.importButton.addEventListener("click", () => elements.importInput.click());
 elements.importInput.addEventListener("change", () => importPostsFile(elements.importInput.files[0]));
 elements.resetButton.addEventListener("click", resetDraft);
+elements.saveApiUrl.value = localStorage.getItem(SAVE_API_URL_KEY) || "";
+elements.saveApiSecret.value = sessionStorage.getItem(SAVE_API_SECRET_KEY) || "";
+elements.saveApiUrl.addEventListener("change", () => {
+  localStorage.setItem(SAVE_API_URL_KEY, elements.saveApiUrl.value.trim());
+});
+elements.saveApiSecret.addEventListener("change", () => {
+  sessionStorage.setItem(SAVE_API_SECRET_KEY, elements.saveApiSecret.value.trim());
+});
 elements.saveButton.addEventListener("click", () => {
   savePostsFile().catch((error) => {
     elements.status.textContent = `Не удалось сохранить файл: ${error.message}`;

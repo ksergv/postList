@@ -139,6 +139,14 @@
   justify-content: flex-end;
 }
 
+.admin-actions input {
+  border: 1px solid #c8d0d9;
+  border-radius: 8px;
+  font: 14px/1.4 "Poppins", sans-serif;
+  min-width: 210px;
+  padding: 8px 10px;
+}
+
 .admin-actions .danger {
   background: #d64545;
 }
