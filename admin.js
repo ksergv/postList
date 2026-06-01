@@ -24,6 +24,7 @@ const elements = {
   loginMessage: document.getElementById("loginMessage"),
   loginPanel: document.getElementById("loginPanel"),
   newButton: document.getElementById("addPostButton"),
+  previewButton: document.getElementById("previewPostButton"),
   preview: document.getElementById("postPreview"),
   resetButton: document.getElementById("resetDraftButton"),
   saveButton: document.getElementById("saveFileButton"),
@@ -222,6 +223,16 @@ function duplicatePost() {
   selectPost(post.id);
 }
 
+function previewSelectedPost() {
+  const current = getSelectedPost();
+  if (!current) {
+    elements.status.textContent = "Выберите пост для просмотра.";
+    return;
+  }
+
+  window.open(`one.html?id=${current.id}&adminPreview=1`, "_blank");
+}
+
 function deletePost() {
   const current = getSelectedPost();
   if (!current) {
@@ -319,6 +330,7 @@ elements.form.addEventListener("change", updateSelectedPost);
 elements.search.addEventListener("input", renderList);
 elements.newButton.addEventListener("click", addPost);
 elements.duplicateButton.addEventListener("click", duplicatePost);
+elements.previewButton.addEventListener("click", previewSelectedPost);
 elements.deleteButton.addEventListener("click", deletePost);
 elements.formatToolbar.addEventListener("click", (event) => {
   const button = event.target.closest("[data-format]");
