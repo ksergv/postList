@@ -1,0 +1,26 @@
+{
+  "name": "PostList Blog",
+  "short_name": "PostList",
+  "description": "Offline-ready PostList blog based on posts.json.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#151515",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "shop/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "shop/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["blog", "productivity", "lifestyle"]
+}
