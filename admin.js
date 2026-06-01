@@ -109,6 +109,10 @@ function selectPost(id) {
   state.selectedId = Number(id);
   fillForm(getSelectedPost());
   renderList();
+
+  if (window.matchMedia("(max-width: 980px)").matches) {
+    elements.form.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 
 function readFormPost() {
