@@ -180,6 +180,32 @@ function insertUnorderedList() {
   updateSelectedPost();
 }
 
+function insertTable() {
+  const tableHtml = `<table>
+  <thead>
+    <tr>
+      <th>Заголовок 1</th>
+      <th>Заголовок 2</th>
+      <th>Заголовок 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Текст</td>
+      <td>Текст</td>
+      <td>Текст</td>
+    </tr>
+    <tr>
+      <td>Текст</td>
+      <td>Текст</td>
+      <td>Текст</td>
+    </tr>
+  </tbody>
+</table>`;
+
+  insertIntoContent(tableHtml, "", "");
+}
+
 function applyFormat(format) {
   const imagePath = elements.image.value.trim() || "img/example.jpg";
 
@@ -191,6 +217,7 @@ function applyFormat(format) {
     unorderedList: insertUnorderedList,
     image: () => insertIntoContent(`<img src="${imagePath}" alt="">`, "", ""),
     link: () => insertIntoContent('<a href="#">', "</a>", "текст ссылки"),
+    table: insertTable,
     linebreak: () => insertIntoContent("<br>\n", "", ""),
   };
 

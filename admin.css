@@ -347,6 +347,25 @@
   max-width: 100%;
 }
 
+#postPreview table {
+  border-collapse: collapse;
+  margin: 16px 0;
+  width: 100%;
+}
+
+#postPreview th,
+#postPreview td {
+  border: 1px solid #c8d0d9;
+  padding: 9px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+#postPreview th {
+  background: #f4f0e8;
+  font-weight: 700;
+}
+
 @media (max-width: 980px) {
   .admin-toolbar,
   .admin-layout,
