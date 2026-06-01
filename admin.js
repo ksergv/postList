@@ -181,27 +181,29 @@ function insertUnorderedList() {
 }
 
 function insertTable() {
-  const tableHtml = `<table>
-  <thead>
-    <tr>
-      <th>Заголовок 1</th>
-      <th>Заголовок 2</th>
-      <th>Заголовок 3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Текст</td>
-      <td>Текст</td>
-      <td>Текст</td>
-    </tr>
-    <tr>
-      <td>Текст</td>
-      <td>Текст</td>
-      <td>Текст</td>
-    </tr>
-  </tbody>
-</table>`;
+  const tableHtml = `<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Заголовок 1</th>
+        <th>Заголовок 2</th>
+        <th>Заголовок 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Текст</td>
+        <td>Текст</td>
+        <td>Текст</td>
+      </tr>
+      <tr>
+        <td>Текст</td>
+        <td>Текст</td>
+        <td>Текст</td>
+      </tr>
+    </tbody>
+  </table>
+</div>`;
 
   insertIntoContent(tableHtml, "", "");
 }
