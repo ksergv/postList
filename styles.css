@@ -526,12 +526,12 @@ header.shadow .logo {
 .youtube-embed {
   background: #111827;
   border-radius: 10px;
-  margin: 22px 0;
+  margin: 22px auto;
   max-width: 600px;
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
-  width: min(100%, 600px);
+  width: min(50%, 600px);
 }
 
 .youtube-embed iframe {
