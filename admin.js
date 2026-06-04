@@ -208,6 +208,57 @@ function insertTable() {
   insertIntoContent(tableHtml, "", "");
 }
 
+function getYouTubeEmbedUrl(value) {
+  const input = value.trim();
+  if (!input) {
+    return "";
+  }
+
+  try {
+    const url = new URL(input);
+    const hostname = url.hostname.replace(/^www\./, "");
+    let videoId = "";
+
+    if (hostname === "youtu.be") {
+      videoId = url.pathname.split("/").filter(Boolean)[0] || "";
+    } else if (hostname.endsWith("youtube.com") || hostname.endsWith("youtube-nocookie.com")) {
+      const parts = url.pathname.split("/").filter(Boolean);
+      if (url.pathname === "/watch") {
+        videoId = url.searchParams.get("v") || "";
+      } else if (["embed", "shorts", "live"].includes(parts[0])) {
+        videoId = parts[1] || "";
+      }
+    }
+
+    return /^[\w-]{11}$/.test(videoId) ? `https://www.youtube.com/embed/${videoId}` : "";
+  } catch (error) {
+    const match = input.match(/^[\w-]{11}$/);
+    return match ? `https://www.youtube.com/embed/${match[0]}` : "";
+  }
+}
+
+function insertYouTube() {
+  const textarea = elements.content;
+  const selectedText = textarea.value.slice(textarea.selectionStart, textarea.selectionEnd).trim();
+  const rawUrl = prompt("YouTube URL or video ID", selectedText);
+
+  if (rawUrl === null) {
+    return;
+  }
+
+  const embedUrl = getYouTubeEmbedUrl(rawUrl);
+  if (!embedUrl) {
+    elements.status.textContent = "Вставьте корректную ссылку YouTube или ID видео.";
+    return;
+  }
+
+  const iframeHtml = `<div class="youtube-embed">
+  <iframe src="${embedUrl}" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>`;
+
+  insertIntoContent(iframeHtml, "", "");
+}
+
 function applyFormat(format) {
   const imagePath = elements.image.value.trim() || "img/example.jpg";
 
@@ -219,6 +270,7 @@ function applyFormat(format) {
     unorderedList: insertUnorderedList,
     image: () => insertIntoContent(`<img src="${imagePath}" alt="">`, "", ""),
     link: () => insertIntoContent('<a href="#">', "</a>", "текст ссылки"),
+    youtube: insertYouTube,
     table: insertTable,
     linebreak: () => insertIntoContent("<br>\n", "", ""),
   };
