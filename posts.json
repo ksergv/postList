@@ -203,7 +203,7 @@
     {
       "id": 34,
       "category": "info",
-      "title": "Новый пост",
+      "title": "Конференция Zoom Ekaterina Crilova",
       "image": "img/gigong.jpg",
       "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/bc107s31Ca8\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>",
       "hidden": false
