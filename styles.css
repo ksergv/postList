@@ -52,6 +52,28 @@ header.shadow {
 header.shadow .logo {
   color: var(--text-color);
 }
+
+.single-post-page header {
+  position: static;
+}
+
+.single-post-page header.shadow {
+  background: transparent;
+  box-shadow: none;
+}
+
+.single-post-page header.shadow .logo {
+  color: var(--bg-color);
+}
+
+.single-post-page .header-content {
+  margin-top: 0 !important;
+}
+
+.single-post-page .posts {
+  margin-top: 40px;
+}
+
 .header-content {
   display: flex;
   flex-direction: column;
