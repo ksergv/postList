@@ -1,4 +1,4 @@
-const CACHE_NAME = "postlist-pwa-v2";
+const CACHE_NAME = "postlist-pwa-v3";
 const CORE_ASSETS = [
   "./",
   "./index.html",
@@ -104,6 +104,11 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (url.pathname.endsWith("/posts.json")) {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  if (/\.(css|js)$/.test(url.pathname)) {
     event.respondWith(networkFirst(request));
     return;
   }

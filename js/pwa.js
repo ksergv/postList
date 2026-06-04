@@ -4,8 +4,23 @@
   }
 
   window.addEventListener("load", function () {
-    navigator.serviceWorker.register("service-worker.js").catch(function (error) {
-      console.warn("Service worker registration failed", error);
+    var refreshing = false;
+
+    navigator.serviceWorker.addEventListener("controllerchange", function () {
+      if (refreshing) {
+        return;
+      }
+      refreshing = true;
+      window.location.reload();
     });
+
+    navigator.serviceWorker
+      .register("service-worker.js")
+      .then(function (registration) {
+        registration.update();
+      })
+      .catch(function (error) {
+        console.warn("Service worker registration failed", error);
+      });
   });
 })();
