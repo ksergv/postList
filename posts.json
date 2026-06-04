@@ -205,7 +205,7 @@
       "category": "physics",
       "title": "Вселенная в одной теории: что такое М-теория?",
       "image": "img/background.jpg",
-      "content": "<div class=\"youtube-embed\"\n<h3>You tube  video..<h3/>\n  <iframe src=\"https://wwvw.youtube.com/embed/BnKO9OVdXbY\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>",
+      "content": "<div class=\"youtube-embed\"\n  <iframe src=\"https://wwvw.youtube.com/embed/BnKO9OVdXbY\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>",
       "hidden": false
     }
   ]
