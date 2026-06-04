@@ -25,6 +25,8 @@
 }
 
 .fa-bars {
+  background: transparent;
+  border: 0;
   position: fixed;
   top: 2rem;
   right: 3rem;
@@ -38,6 +40,8 @@
 }
 
 .fa-times {
+  background: transparent;
+  border: 0;
   font-size: 1.5rem;
   color: #e94949;
   cursor: pointer;
