@@ -527,11 +527,11 @@ header.shadow .logo {
   background: #111827;
   border-radius: 10px;
   margin: 22px 0;
-  max-width: 960px;
+  max-width: 600px;
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
-  width: min(100%, 960px);
+  width: min(100%, 600px);
 }
 
 .youtube-embed iframe {
