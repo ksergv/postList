@@ -532,7 +532,6 @@ header.shadow .logo {
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
-  width: min(400px, 800px);
 }
 
 .youtube-embed iframe {
