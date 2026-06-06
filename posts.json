@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": 2,
-      "category": "magic",
+      "category": "physics",
       "title": "Мантра 15 аркана",
       "image": "img/15a.jpg",
       "content": "<img src=\"img/15a.jpg\"  width=\"100\" height=\"200\" alt=\"lorem\" align=\"left\" hspace=\"20px\">\n<p>Серебряная нить находится в центре позвоночника и состоит из Ян и Инь нитей, которые запитываются от земли - красной Ян энергией и космоса - синей Инь энергией.<br/>Укрепление серебряной нити обычно происходит через секс, где мужчина отдает Ян и принимает Инь, а женщина наоборот. Однако мужчинам можно получить инь нить за счет обратного круга, а женщинам за счет прямого круга.<br/>Прямой круг-Ян берет низкочастотную энергию земли Ян, обратный круг-Инь забирает высокочастотную энергию космоса.<br/>Концентрация внимания на канале Сушумна в центре позвоночника с одновременным прямым или обратным кругом будет заряжать соответствующую часть серебряной нити и тем самым укреплять здоровье и выживаемость человека.</p>\n<p style=\"color: yellow; background: blue; padding: 10px\"><b>ВАРД ЕККУН СО ЕККУН ЕТТОРИ ЕТТОР ФОРТ ЕРРО ИССТ ОМЕР ВАРИС ЕРРО ЕРРО ВАРД СУББИ ОРТ ЕРРО ЕККУН ВАРТ ЕРРО</b></p> ",
@@ -221,8 +221,16 @@
       "category": "gigong",
       "title": "Эмоции и тело -1",
       "image": "img/gigong.jpg",
+      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/BzTzxInmmis\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>",
+      "hidden": false
+    },
+    {
+      "id": 37,
+      "category": "gigong",
+      "title": "Эмоции и тело-2",
+      "image": "img/gigong.jpg",
       "hidden": false,
-      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/BzTzxInmmis\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>"
+      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/hguJHc9nkpw\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>"
     }
   ]
 }
