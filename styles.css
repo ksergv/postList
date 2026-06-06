@@ -152,17 +152,18 @@ header.shadow .logo {
   text-shadow: 4px 4px 4px #aaa;
   border-radius:50%;
   padding: 20px;
-  margin-right: 120px;
+  margin-right: 80px;
+}
+.login:hover {
+  background: var(--text-color);
+  transition: 0.3s;
 }
 .logo span {
   font-size: 36px;
   color: var(--second-color);
 }
 
-.login:hover {
-  background: var(--text-color);
-  transition: 0.3s;
-}
+
 .subtitle {
   font-family: "Pacifico", cursive;
   font-weight: 400;
