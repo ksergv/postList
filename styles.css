@@ -152,6 +152,7 @@ header.shadow .logo {
   text-shadow: 4px 4px 4px #aaa;
   border-radius:50%;
   padding: 20px;
+  margin-right: 120px;
 }
 .logo span {
   font-size: 36px;
@@ -648,10 +649,7 @@ header.shadow .logo {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-      .login  {
-  font-size: 20px;
-  padding-right: 120px ;
-}
+
  }
 @media (max-width: 812px) {
   .nav {
@@ -685,10 +683,7 @@ header.shadow .logo {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-    .login  {
-  font-size: 30px;
-  padding-right: 80px ;
-}
+
 }
 @media (max-width: 375px) {
   .nav {
@@ -737,9 +732,6 @@ header.shadow .logo {
   #postList p {
     font-size: 16px;
   }
-  .login  {
-  font-size: 30px;
-  padding-right: 80px ;
-}
+
 
 }
