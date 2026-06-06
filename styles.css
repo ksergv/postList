@@ -157,7 +157,7 @@ header.shadow .logo {
   transform: translateY(-7px);
 }
 .login:hover {
-  background: var(--bg-color);
+  background: var(--text-color);
   transition: 0.3s;
 }
 .logo span {
