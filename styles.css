@@ -393,10 +393,20 @@ header.shadow .logo {
         background: #111827;
         border-radius: 10px;
         box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+        cursor: pointer;
         margin: 10px 0 14px;
         overflow: hidden;
         position: relative;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
         width: 100%;
+      }
+
+      #postList .youtube-card-preview:hover,
+      #postList .youtube-card-preview:focus {
+        box-shadow: 0 8px 20px hsl(355deg 25% 15% / 18%);
+        outline: 2px solid var(--second-color);
+        outline-offset: 2px;
+        transform: translateY(-2px);
       }
 
       #postList .youtube-card-preview img {

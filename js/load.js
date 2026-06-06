@@ -32,7 +32,7 @@ function getYouTubePreviewHtml(content) {
     return "";
   }
 
-  return `<div class="youtube-card-preview" aria-label="YouTube video preview">
+  return `<div class="youtube-card-preview" role="button" tabindex="0" aria-label="Открыть пост с YouTube видео">
     <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg" alt="">
     <span class="youtube-card-play" aria-hidden="true"></span>
   </div>`;
@@ -57,8 +57,20 @@ function loadPosts() {
         const youtubePreview = getYouTubePreviewHtml(post.content);
         const button = document.createElement('button');
         button.textContent = "Перейти";
-        button.addEventListener('click', () => {
+        const openPost = () => {
           window.location.href = `one.html?id=${post.id}`;
+        };
+        button.addEventListener('click', openPost);
+        listItem.addEventListener('click', (event) => {
+          if (event.target.closest('.youtube-card-preview')) {
+            openPost();
+          }
+        });
+        listItem.addEventListener('keydown', (event) => {
+          if (event.target.closest('.youtube-card-preview') && (event.key === 'Enter' || event.key === ' ')) {
+            event.preventDefault();
+            openPost();
+          }
         });
         listItem.innerHTML = `<h2>${escapeHtml(post.title)}</h2>${youtubePreview}<p>${escapeHtml(previewText)}</p>`;
         listItem.appendChild(button);
