@@ -30,13 +30,13 @@
   position: fixed;
   top: 2rem;
   right: 3rem;
-  color: #7ec8d3e0;
+  color: #dae4e6e0;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
 .fa-bars:hover {
-  color: rgb(176, 204, 15);
+  background: rgb(24, 24, 24);
 }
 
 .fa-times {
