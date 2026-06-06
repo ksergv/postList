@@ -387,6 +387,51 @@ header.shadow .logo {
         margin:10px;
         padding:5px;
       }
+
+      #postList .youtube-card-preview {
+        aspect-ratio: 16 / 9;
+        background: #111827;
+        border-radius: 10px;
+        box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+        margin: 10px 0 14px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+
+      #postList .youtube-card-preview img {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        display: block;
+        height: 100%;
+        margin: 0;
+        object-fit: cover;
+        padding: 0;
+        width: 100%;
+      }
+
+      #postList .youtube-card-play {
+        background: rgba(253, 143, 68, 0.92);
+        border-radius: 50%;
+        height: 54px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 54px;
+      }
+
+      #postList .youtube-card-play::before {
+        border-bottom: 12px solid transparent;
+        border-left: 18px solid #fff;
+        border-top: 12px solid transparent;
+        content: "";
+        left: 21px;
+        position: absolute;
+        top: 15px;
+      }
+
       #postList button {
         background-color: var(bg-color);
         border: 1px solid  transparent;

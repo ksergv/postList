@@ -4,6 +4,40 @@ function getSelectedSortOrder() {
   return sortOrderSelect ? sortOrderSelect.value : 'asc';
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function getYouTubeVideoId(content) {
+  const match = String(content).match(/(?:youtube\.com\/(?:embed\/|watch\?v=|shorts\/|live\/)|youtu\.be\/)([\w-]{11})/);
+  return match ? match[1] : "";
+}
+
+function getTextPreview(content, maxLength = 200) {
+  const preview = document.createElement("div");
+  preview.innerHTML = content || "";
+  preview.querySelectorAll("script, style, iframe, .youtube-embed").forEach((node) => node.remove());
+  const text = preview.textContent.replace(/\s+/g, " ").trim();
+  return text.length > maxLength ? `${text.slice(0, maxLength).trim()} ...` : text;
+}
+
+function getYouTubePreviewHtml(content) {
+  const videoId = getYouTubeVideoId(content);
+  if (!videoId) {
+    return "";
+  }
+
+  return `<div class="youtube-card-preview" aria-label="YouTube video preview">
+    <img src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg" alt="">
+    <span class="youtube-card-play" aria-hidden="true"></span>
+  </div>`;
+}
+
 // Function to load and display all posts
 function loadPosts() {
   const sortOrder = getSelectedSortOrder();
@@ -19,13 +53,14 @@ function loadPosts() {
         const listItem = document.createElement('li');
         listItem.classList.add(`${post.category}`);
         listItem.classList.add('card');
-        const shortenedContent = post.content.slice(0, 200);
+        const previewText = getTextPreview(post.content);
+        const youtubePreview = getYouTubePreviewHtml(post.content);
         const button = document.createElement('button');
         button.textContent = "Перейти";
         button.addEventListener('click', () => {
           window.location.href = `one.html?id=${post.id}`;
         });
-        listItem.innerHTML = `<h2>${post.title}</h2> ${shortenedContent} ...`;
+        listItem.innerHTML = `<h2>${escapeHtml(post.title)}</h2>${youtubePreview}<p>${escapeHtml(previewText)}</p>`;
         listItem.appendChild(button);
         postList.appendChild(listItem);
         });
