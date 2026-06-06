@@ -153,8 +153,8 @@ header.shadow .logo {
   border-radius:50%;
   padding: 20px;
   margin-right: 50px;
-  position: relative;
-  top: -4px; /* поднимет вверх */
+  display: inline-block;
+  transform: translateY(-5px);
 }
 .login:hover {
   background: var(--text-color);
