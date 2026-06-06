@@ -154,7 +154,7 @@ header.shadow .logo {
   padding: 20px;
   margin-right: 50px;
   display: inline-block;
-  transform: translateY(-5px);
+  transform: translateY(-7px);
 }
 .login:hover {
   background: var(--bg-color);
