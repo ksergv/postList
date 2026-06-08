@@ -633,6 +633,59 @@ header.shadow .logo {
   width: min(100%, 700px);
 }
 
+@media print {
+  body {
+    background: #fff;
+  }
+
+  header,
+  .footer,
+  #postList button {
+    display: none !important;
+  }
+
+  .post-header {
+    background: #fff;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .home {
+    background: #fff;
+  }
+
+  .header-title,
+  .header-title h1 {
+    color: #111;
+    text-shadow: none;
+  }
+
+  .header-img {
+    height: auto;
+    max-height: 300px;
+  }
+
+  .posts {
+    background: #fff;
+    border: 0;
+    margin: 0;
+    opacity: 1;
+    padding: 0;
+    width: 100%;
+  }
+
+  #postList > li {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  #postList p {
+    font-size: 14pt;
+  }
+}
+
 
  /* Responsive */
  @media (max-width: 1060px) {

@@ -26,6 +26,7 @@ const elements = {
   loginMessage: document.getElementById("loginMessage"),
   loginPanel: document.getElementById("loginPanel"),
   newButton: document.getElementById("addPostButton"),
+  printButton: document.getElementById("printPostButton"),
   previewButton: document.getElementById("previewPostButton"),
   preview: document.getElementById("postPreview"),
   resetButton: document.getElementById("resetDraftButton"),
@@ -322,6 +323,16 @@ function previewSelectedPost() {
   window.open(`one.html?id=${current.id}&adminPreview=1`, "_blank");
 }
 
+function printSelectedPost() {
+  const current = getSelectedPost();
+  if (!current) {
+    elements.status.textContent = "Выберите пост для создания PDF.";
+    return;
+  }
+
+  window.open(`one.html?id=${current.id}&adminPreview=1&print=1`, "_blank");
+}
+
 function deletePost() {
   const current = getSelectedPost();
   if (!current) {
@@ -464,6 +475,7 @@ elements.search.addEventListener("input", renderList);
 elements.newButton.addEventListener("click", addPost);
 elements.duplicateButton.addEventListener("click", duplicatePost);
 elements.previewButton.addEventListener("click", previewSelectedPost);
+elements.printButton.addEventListener("click", printSelectedPost);
 elements.deleteButton.addEventListener("click", deletePost);
 elements.formatToolbar.addEventListener("click", (event) => {
   const button = event.target.closest("[data-format]");

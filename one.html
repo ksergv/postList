@@ -59,6 +59,7 @@
       var urlParams = new URLSearchParams(window.location.search);
       var indexParam = urlParams.get('id');
       var adminPreview = urlParams.get('adminPreview') === '1' && sessionStorage.getItem('postList.adminAuth') === '1';
+      var printMode = urlParams.get('print') === '1' && adminPreview;
       if (indexParam) {
           var index = parseInt(indexParam);
           // Загрузка поста при загрузке страницы
@@ -88,6 +89,13 @@
               }); 
         listItem.appendChild(button);      
         postList.appendChild(listItem);
+
+        if (printMode) {
+            document.body.classList.add('print-mode');
+            setTimeout(function () {
+                window.print();
+            }, 500);
+        }
     }
 
   // Функция для получения поста по ID
