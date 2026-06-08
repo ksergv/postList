@@ -366,7 +366,6 @@ header.shadow .logo {
       #postList > li ul li,
       #postList > li ol li {
         border: 0;
-        font-size: inherit;
         list-style: disc;
         margin: 4px 0;
         padding: 0;
@@ -376,7 +375,9 @@ header.shadow .logo {
         padding: 5px;
         font-size: 20px;
       }
-      #postList p {
+      #postList p,
+      #postList > li ul li,
+      #postList > li ol li {
         font-family: "Poppins", sans-serif;
         font-weight: 400;
         font-style: normal;
@@ -681,7 +682,9 @@ header.shadow .logo {
     padding: 0;
   }
 
-  #postList p {
+  #postList p,
+  #postList > li ul li,
+  #postList > li ol li {
     font-size: 14pt;
   }
 }
@@ -731,7 +734,9 @@ header.shadow .logo {
     margin-top:40px;
     padding:20px;
   }
-  #postList p {
+  #postList p,
+  #postList > li ul li,
+  #postList > li ol li {
     font-size: 16px;
   }
   .post-grid {
@@ -785,7 +790,9 @@ header.shadow .logo {
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
   }
-  #postList p {
+  #postList p,
+  #postList > li ul li,
+  #postList > li ol li {
     font-size: 16px;
   }
 
