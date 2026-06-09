@@ -19,7 +19,7 @@
 }
 
 .previous-page, .next-page{
-  background: #0AB1CE;
+  background: #fd8f44;
   width: 80px;
   border-radius: 45px;
   cursor: pointer;
@@ -42,7 +42,7 @@
 }
 
 .active{
-  background: #0AB1CE;
+  background: #fd8f44;
 }
 
 .disable{
