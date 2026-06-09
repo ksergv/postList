@@ -231,8 +231,8 @@ header.shadow .logo {
   }
 
   .active-filter {
-    background: var(--second-color);
-    color: var(--bg-color);
+    background: var(--bg-color);
+    color: var(--second-color);
     padding: 4px 10px;
     border-radius: 4px;
   }
