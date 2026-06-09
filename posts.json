@@ -213,7 +213,7 @@
       "category": "gigong",
       "title": "Эмоции и тело -1",
       "image": "img/gigong.jpg",
-      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/BzTzxInmmis\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>",
+      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/BzTzxInmmis\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>\n<textarea rows=\"10\" style=\"width:100%;\">\n00:00 Введение\n57:20 Практика\n</textarea>",
       "hidden": true
     },
     {
