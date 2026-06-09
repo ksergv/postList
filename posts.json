@@ -245,8 +245,16 @@
       "category": "gigong",
       "title": "Ритрит Май 2025-1",
       "image": "img/gigong.jpg",
-      "hidden": true,
-      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/T3QyA3dLAKg\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>"
+      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/T3QyA3dLAKg\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>",
+      "hidden": true
+    },
+    {
+      "id": 41,
+      "category": "health",
+      "title": "Чеснок каждый день — я как врач скажу вам правду. Десять минут которые меняют всё",
+      "image": "img/blog.jpg",
+      "hidden": false,
+      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/Ls0evaRZVpI\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>"
     }
   ]
 }
