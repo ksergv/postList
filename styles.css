@@ -8,7 +8,8 @@
   box-sizing: border-box;
 }
 body{
-  background-image: url('./img/background.jpg');
+ /*background-image: url('./img/background.jpg');*/
+  background-color: #fff;
    }
    /* Variables */
 :root {
@@ -220,7 +221,7 @@ header.shadow .logo {
     font-weight: 400;
     font-style: normal;
     font-size: 28px;
-    color: gray;
+    color: #aaa;
     border-radius:50%;
     padding:20px;
   }
@@ -489,8 +490,8 @@ header.shadow .logo {
 
       .posts{
           display:block;
-       /* background-image: url('./img/Space-Background-Image.jpg'); */
-         background-color: #7d4256;
+        background-image: url('./img/Space-Background-Image.jpg'); 
+        /* background-color: #63344e; */
           border-radius: 20px;
           opacity:0.8;
           width:96%;
