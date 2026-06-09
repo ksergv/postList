@@ -184,8 +184,8 @@ header.shadow .logo {
 .home {
     width: 100%;
     min-height: 200px;
-    /*background-image: url('./img/apex_background_04.jpg'); */
-    background: url("https://images.unsplash.com/photo-1560762484-813fc97650a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+    background-image: url('./img/apex_background_04.jpg'); 
+
     background-size: cover;
     justify-content: center;
     align-items: center;
@@ -489,8 +489,8 @@ header.shadow .logo {
 
       .posts{
           display:block;
-        /*  background-image: url('./img/apex_background_13.jpg'); */
-        background-color: #fafafa;
+       /* background-image: url('./img/Space-Background-Image.jpg'); */
+         background-color: #7d4256;
           border-radius: 20px;
           opacity:0.8;
           width:96%;
@@ -498,7 +498,7 @@ header.shadow .logo {
           padding:20px;
           border: 1px solid silver;
           position:relative;
-          margin-top:150px;
+          margin-top:10px;
           padding-bottom:40px;
       }
       .posts p::first-letter {
