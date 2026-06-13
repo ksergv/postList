@@ -70,11 +70,10 @@ document
         return;
     }
 
-    textarea.value =
-        textarea.value.slice(0, lastTbody) +
-        row +
-        "\n" +
-        textarea.value.slice(lastTbody);
+   textarea.value = textarea.value.replace(
+    "</tbody>",
+    row + "\n</tbody>"
+);
 
     updateSelectedPost();
 
@@ -328,6 +327,8 @@ function applyFormat(format) {
             <tbody>
             </tbody>
         </table>
+        <hr>
+        <P style="padding: 10px;"> Вы можете вносить изменния  в админ режиме редактирования данного поста,  активизировав кнопку "row-video" и добавлять новые строки через воод в поля "Время" и "Описание" и вставляя эти данные с помощью кнопки "Добавить". Сама таблица вставляется с помощью кнопки "video-notes".</P>
     </div>
 </div>`,
 "",

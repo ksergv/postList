@@ -229,7 +229,7 @@
       "category": "gigong",
       "title": "Эмоции и тело-3",
       "image": "img/gigong.jpg",
-      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/LMlWwmeSZRg\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>\n<div class=\"video-notes\">\n    <h4>Метки видео</h4>\n    <pre>\n00:00 Введение\n...\n    </pre>\n</div>",
+      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/LMlWwmeSZRg\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>\n<div class=\"video-notes\">\n    <h4>Метки видео</h4>\n    <div class=\"table-wrap\">\n        <table>\n            <thead>\n                <tr>\n                    <th>Время</th>\n                    <th>Описание</th>\n                </tr>\n            </thead>\n            <tbody>\n            \n<tr>\n    <td>00:20</td>\n    <td>Введение</td>\n</tr>\n</tbody>\n        </table>\n<hr>\n        <P> Вы можете вносить изменния  в админ режиме редактирования данного поста,  активизировав кнопку \"row-video\" и добавлять новые строки через воод в поля \"Время\" и \"Описание\" и вставляя эти данные с помощью кнопки \"Добавить\".  Сама таблица вставляется с помощью кнопки \"video-notes</P>\n    </div>\n</div>",
       "hidden": true
     },
     {
