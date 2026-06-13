@@ -55,14 +55,28 @@ document
         return;
     }
 
-    insertIntoContent(
-`<tr>
+    const row = `
+<tr>
     <td>${time}</td>
     <td>${text}</td>
-</tr>`,
-"",
-""
-    );
+</tr>`;
+
+    const textarea = elements.content;
+
+    const lastTbody = textarea.value.lastIndexOf("</tbody>");
+
+    if (lastTbody === -1) {
+        alert("Сначала вставьте таблицу меток кнопкой MARK");
+        return;
+    }
+
+    textarea.value =
+        textarea.value.slice(0, lastTbody) +
+        row +
+        "\n" +
+        textarea.value.slice(lastTbody);
+
+    updateSelectedPost();
 
     document.getElementById("markTime").value = "";
     document.getElementById("markText").value = "";
