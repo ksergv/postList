@@ -76,6 +76,10 @@ document
 );
 
     updateSelectedPost();
+    
+    if (window.postPreviewWindow && !window.postPreviewWindow.closed) {
+    window.postPreviewWindow.location.reload();
+}
 
     document.getElementById("markTime").value = "";
     document.getElementById("markText").value = "";
@@ -385,9 +389,11 @@ function previewSelectedPost() {
     return;
   }
 
-  window.open(`one.html?id=${current.id}&adminPreview=1`, "_blank");
+  window.postPreviewWindow = window.open(
+      `one.html?id=${current.id}&adminPreview=1`,
+      "previewWindow"
+  );
 }
-
 function printSelectedPost() {
   const current = getSelectedPost();
   if (!current) {
