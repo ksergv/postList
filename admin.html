@@ -105,19 +105,29 @@
               <button type="button" data-format="link" title="Ссылка">A</button>
               <button type="button" data-format="youtube" title="YouTube">YT</button>
               <button type="button" data-format="table" title="Таблица">TABLE</button>
-              <button type="button" data-format="videonotes" title="Метки видео">MARK</button>
+              <button type="button" data-format="videonotes" title="Метки видео">mark</button>
+             <button type="button"data-format="videorow" title="Строка метки">row</button>
               <button type="button" data-format="linebreak" title="Перенос строки">BR</button>
             </div>
             <textarea id="postContent" rows="18" spellcheck="true" lang="ru"></textarea>
           </label>
         </form>
 
+
         <section class="preview-panel" aria-label="Предпросмотр">
           <h2>Предпросмотр</h2>
           <article id="postPreview"></article>
-        </section>
+        </section>       
       </section>
     </section>
+    <h4>Добавление метки видео в таблицу</h4>
+     <div id="videoMarkForm" style="display:none;">
+    <input id="markTime" placeholder="03:25">
+    <input id="markText" placeholder="Описание">
+   <button type="button" id="insertMarkRow">
+    Добавить
+</button>
+</div>
   </main>
 
   <script src="js/posts-store.js"></script>

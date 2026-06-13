@@ -48,3 +48,20 @@
 .disable{
   background: #ccc;
 }
+.video-notes {
+    text-align: center;
+    margin: 10px auto;
+    width: 68%;
+    border: 1px solid #270cd3;
+    border-radius: 10px;
+    background: #ede9cb;
+}
+
+
+.video-notes pre {
+    display: table;
+    margin: 0 auto;
+    text-align: left;
+    font-family: monospace;
+    color:blue
+}

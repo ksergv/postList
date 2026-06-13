@@ -526,22 +526,17 @@ header.shadow .logo {
       }
       
 .video-notes {
-    text-align: center;
-    margin: 20px auto;
+    margin: 10px auto;
+    width: 100%;
 }
 
 
-.video-notes pre {
-    display: table;
-    margin: 0 auto;
-    padding: 15px;
-    text-align: left;
-     border: 1px solid #6350e0;
-    border-radius: 10px;
-    background: #fafafa;
-    font-family: monospace;
-}
+
 .video-notes h4 {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  margin-bottom: 12px;
     margin-bottom: 0.5rem;
 }
 
@@ -576,7 +571,8 @@ header.shadow .logo {
   border: 1px solid #ddd2c7;
   border-radius: 12px;
   box-shadow: 0 12px 28px rgba(23, 35, 23, 0.1);
-  margin: 22px 0;
+  width: 70%;
+  margin: 22px auto;
   overflow-x: auto;
 }
 

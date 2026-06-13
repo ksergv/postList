@@ -426,7 +426,23 @@
 #postPreview tbody tr:hover {
   background: #fff5ed;
 }
+.video-mark-form {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
 
+.video-mark-form input {
+    padding: 5px;
+}
+
+#markTime {
+    width: 80px;
+}
+
+#markText {
+    flex: 1;
+}
 
 @media (max-width: 980px) {
   .admin-toolbar,

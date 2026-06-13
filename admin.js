@@ -39,6 +39,35 @@ const elements = {
   title: document.getElementById("postTitle"),
 };
 
+
+
+document
+    .getElementById("insertMarkRow")
+    .addEventListener("click", () => {
+
+    const time =
+        document.getElementById("markTime").value.trim();
+
+    const text =
+        document.getElementById("markText").value.trim();
+
+    if (!time || !text) {
+        return;
+    }
+
+    insertIntoContent(
+`<tr>
+    <td>${time}</td>
+    <td>${text}</td>
+</tr>`,
+"",
+""
+    );
+
+    document.getElementById("markTime").value = "";
+    document.getElementById("markText").value = "";
+});
+
 function unlockAdmin() {
   document.body.classList.remove("admin-locked");
   document.body.classList.add("admin-unlocked");
@@ -271,24 +300,36 @@ function applyFormat(format) {
     link: () => insertIntoContent('<a href="#">', "</a>", "текст ссылки"),
     youtube: insertYouTube,
     table: insertTable,
-    videonotes: () => insertIntoContent(
+  videonotes: () => insertIntoContent(
 `<div class="video-notes">
     <h4>Метки видео</h4>
-    <pre>
-       00:00 Введение
-       ...
-    </pre>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Время</th>
+                    <th>Описание</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
 </div>`,
 "",
 ""
 ),
-    linebreak: () => insertIntoContent("<br>\n", "", ""),
+videorow: () => {
+    document.getElementById("videoMarkForm").style.display = "block";
+},
+linebreak: () => insertIntoContent("<br>\n", "", ""),
   };
 
   if (formats[format]) {
     formats[format]();
   }
 }
+
 
 function addPost() {
   const post = {
