@@ -524,6 +524,28 @@ header.shadow .logo {
         text-shadow: 4px 4px 4px #aaa;
         text-align: center;
       }
+      
+.video-notes {
+    text-align: center;
+    margin: 20px auto;
+}
+
+
+.video-notes pre {
+    display: table;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: left;
+     border: 1px solid #6350e0;
+    border-radius: 10px;
+    background: #fafafa;
+    font-family: monospace;
+}
+.video-notes h4 {
+    margin-bottom: 0.5rem;
+}
+
+
 
       .footer {
         display: flex;

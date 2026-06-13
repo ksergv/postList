@@ -213,7 +213,7 @@
       "category": "gigong",
       "title": "Эмоции и тело -1",
       "image": "img/gigong.jpg",
-      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/BzTzxInmmis\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>\n<b>Метки для просмотра:</b>\n<table> \n <thead>\n      <tr>\n        <th>Время</th>\n        <th>Содержание</th>\n      </tr>\n    </thead>\n\n<tr><td>00:20</td><td>Введение</td></tr>\n<tr><td>58:05</td><td>Дыхание телом с вниманием на точке мин-тан</td></tr>\n<tr><td>1:27:19</td><td>Запах Розы</td></tr>\n<tr><td>1:52:15</td><td>Завершение</td></tr>\n</table>",
+      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/BzTzxInmmis\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>\n<div class=\"video-notes\">\n    <h4>Метки видео</h4>\n    <pre>\n00:20 Введение\n58:05 Дыхание телом с вниманием на точке мин-тан\n1:27:19 Запах Розы\n1:52:15 Завершение\n    </pre>\n</div>",
       "hidden": true
     },
     {
@@ -221,7 +221,7 @@
       "category": "gigong",
       "title": "Эмоции и тело-2",
       "image": "img/gigong.jpg",
-      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/hguJHc9nkpw\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>\n<b>Метки для просмотра:</b>\n<table>\n  <thead>\n      <tr>\n        <th>Время</th>\n        <th>Содержание</th>\n      </tr>\n    </thead>\n<tr><td>06:55</td><td>Начало</td></tr>\n<tr><td>15:55</td><td>Дыхание телом </td></tr>\n<tr><td> </td><td> </td></tr>\n<tr><td> </td><td> </td></tr>\n</table>\n",
+      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/hguJHc9nkpw\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>\n<div class=\"video-notes\">\n    <h4>Метки видео</h4>\n    <pre>\n00:00 Введение\n...\n    </pre>\n</div>\n",
       "hidden": true
     },
     {
@@ -229,7 +229,7 @@
       "category": "gigong",
       "title": "Эмоции и тело-3",
       "image": "img/gigong.jpg",
-      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/LMlWwmeSZRg\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>",
+      "content": " <h3 style=\"text-align:center;color: #c21515;\">You tube video..</h3><div class=\"youtube-embed\">\n  <iframe src=\"https://www.youtube.com/embed/LMlWwmeSZRg\" title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>\n</div>\n<div class=\"video-notes\">\n    <h4>Метки видео</h4>\n    <pre>\n00:00 Введение\n...\n    </pre>\n</div>",
       "hidden": true
     },
     {

@@ -188,17 +188,14 @@ function insertTable() {
       <tr>
         <th>Заголовок 1</th>
         <th>Заголовок 2</th>
-        <th>Заголовок 3</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Текст</td>
         <td>Текст</td>
-        <td>Текст</td>
       </tr>
       <tr>
-        <td>Текст</td>
         <td>Текст</td>
         <td>Текст</td>
       </tr>
@@ -260,6 +257,7 @@ function insertYouTube() {
   insertIntoContent(iframeHtml, "", "");
 }
 
+
 function applyFormat(format) {
   const imagePath = elements.image.value.trim() || "img/example.jpg";
 
@@ -273,6 +271,17 @@ function applyFormat(format) {
     link: () => insertIntoContent('<a href="#">', "</a>", "текст ссылки"),
     youtube: insertYouTube,
     table: insertTable,
+    videonotes: () => insertIntoContent(
+`<div class="video-notes">
+    <h4>Метки видео</h4>
+    <pre>
+       00:00 Введение
+       ...
+    </pre>
+</div>`,
+"",
+""
+),
     linebreak: () => insertIntoContent("<br>\n", "", ""),
   };
 
